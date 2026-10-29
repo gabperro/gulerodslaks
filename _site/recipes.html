@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>Gulerodslaks | Recipes</title>
+        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+    <body class="consistent-page recipes-page">
+<header class="site-header"> 
+  <div class="home-header-content">
+    <a class="header-logo" href="index.html"><span>Gulerodslaks</span><i class="fas fa-leaf" aria-hidden="true"></i></a>
+    <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="recipes.html" aria-current="page">Recipes</a>
+        <a href="ideas.html">Inspiration</a>
+        <a href="about.html">About me</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class ="paragraphs">
+    <h1>Welcome to Gulerodslaks!</h1>
+    <p>Happy birthday Anna! For your birthday, I thought I would offer you a step forward in something you've told me about doing for a while now. See, can someone really be a food influencer without their own website? In all seriousness, I wanted you to find a way to organize your recipes and your ideas into something that you can share with the people you want. In making this website, I was mostly inspired by what you said about Vegetarisk Hverdag, when you said it was relatable, and that you could use her work to get inspiration on how to do stuff. So I wanted a website that didn't require you to make complete recipes from A to Z.</p>
+</section>
+
+<h1 class="recipes-title">Recipes</h1>
+<div class="idea-filters recipe-filters" aria-label="Filter recipes">
+  <button type="button" data-filter="" aria-pressed="true">All</button>
+  
+    <button type="button" data-filter="Desserts" aria-pressed="false">
+      Desserts
+    </button>
+  
+    <button type="button" data-filter="Baking" aria-pressed="false">
+      Baking
+    </button>
+  
+</div>
+<div class="recipe-presentation-grid">
+  
+    <a class="recipe-presentation" href="/content/recipes/cookies/" data-category="Desserts">
+      
+        <img src="/img/cookies.png"
+             alt="Cookies"
+             loading="lazy">
+      
+
+      <div class="recipe-presentation-content">
+        <h2 class="recipe-presentation-title">
+          Cookies
+        </h2>
+
+        
+        <p class="recipe-presentation-date">
+          January 3rd, 2026
+        </p>
+        
+
+        
+        <p class="recipe-presentation-description">
+          My go-to cookie recipe
+        </p>
+        
+      </div>
+    </a>
+  
+    <a class="recipe-presentation" href="/content/recipes/danish_bread_rolls/" data-category="Baking">
+      
+        <img src="/img/bread-rolls.webp"
+             alt="Danish Bread Rolls"
+             loading="lazy">
+      
+
+      <div class="recipe-presentation-content">
+        <h2 class="recipe-presentation-title">
+          Danish Bread Rolls
+        </h2>
+
+        
+        <p class="recipe-presentation-date">
+          4/01/2026
+        </p>
+        
+
+        
+        <p class="recipe-presentation-description">
+          No-knead bread rolls made with an overnight refrigerator dough.
+        </p>
+        
+      </div>
+    </a>
+  
+</div>
+</main>
+<script>
+  const buttons = document.querySelectorAll(".recipe-filters button");
+  const cards = document.querySelectorAll(".recipe-presentation");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.dataset.filter;
+      buttons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      cards.forEach(card => {
+        card.hidden = category !== "" && card.dataset.category !== category;
+      });
+    });
+  });
+</script>
+<footer class="site-footer"></footer>
+</body>
+</html>

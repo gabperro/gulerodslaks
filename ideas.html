@@ -1,0 +1,74 @@
+---
+permalink: /ideas.html
+templateEngineOverride: njk
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>Gulerodslaks | Ideas</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+    <body>
+<header class="site-header"> 
+  <div class="home-header-content">
+    <a class="header-logo" href="index.html"><span>Gulerodslaks</span><i class="fas fa-leaf" aria-hidden="true"></i></a>
+    <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a class="active" href="ideas.html" aria-current="page">Inspiration</a>
+        <a href="about.html">About me</a>
+    </nav>
+  </div>
+</header>
+<main class="ideas-section">
+  <h1>Inspiration</h1>
+<div class="idea-filters" aria-label="Filter ideas">
+  <button type="button" data-filter="" aria-pressed="true">
+    All
+  </button>
+  {% for category, cards in ideaCards | groupby("category") %}
+  <button type="button" data-filter="{{ category }}" aria-pressed="false">
+    {{ category | capitalize }}
+  </button>
+  {% endfor %}
+</div>
+<div class="explore-grid">
+    {% for idea in ideaCards %}
+      <article class="explore-card" data-category="{{ idea.category }}">
+        <img src="{{ idea.image }}"
+             alt="{{ idea.title }}"
+             loading="lazy">
+
+        <div class="explore-card-content">
+          <h2 class="explore-card-title">{{ idea.title }}</h2>
+          <p class="explore-card-description">
+            {{ idea.description }}
+          </p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll(".idea-filters button");
+  const cards = document.querySelectorAll(".explore-card");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.dataset.filter;
+      buttons.forEach(item => {
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+      cards.forEach(card => {
+        card.hidden = category !== "" && card.dataset.category !== category;
+      });
+    });
+  });
+</script>
+<footer class="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,622 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=La+Belle+Aurore&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Syne:wght@400..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Root work */
+:root {
+  /* Palette */
+  --warm-white: #FAF8F2;
+  --oat: #EDE8DC;
+  --tomato-primary: #C43D32;
+  --sage-green: #87977A;
+  --olive-green: #303B2E;
+  --pale-olive: #D5D5B7; 
+  --syne: "Syne", sans-serif; 
+  --urbanist: "Urbanist", sans-serif;
+  --ibmplexmono:"IBM Plex Mono", monospace; 
+  --aurore: "La Belle Aurore", cursive; 
+
+}
+body {
+    margin: 0;
+    background-color: var(--oat);
+}
+/*Header*/
+.site-header {
+    position: sticky; 
+    top: -180px;
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-between;
+    min-height: 80px;
+    padding: 0 4%;
+    background-color: var(--tomato-primary);
+    color: var(--oat);
+    border-bottom: var(--bordercolor) 2px solid;
+}
+.header-logo {
+    display : flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 180px; 
+    flex-shrink: 0;
+    gap: 12px;
+    font-family: var(--syne);
+    font-weight: 600px;
+    font-size: clamp(2rem, 7vw, 5rem);
+    line-height: 1;
+    color: var(--oat);
+    text-decoration: none;
+    overflow: hidden; 
+    transition: height 0.3s ease, opacity 
+    0.3s ease;
+}
+
+.header-nav{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 30px;
+    padding: 15px 20px; 
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+.site-logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+.site-logo .fa-carrot{
+    margin-left: 8px;
+    color: orangered;
+}
+.site-logo:hover, .site-logo .fa-leaf:hover {
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex; 
+    flex-wrap: wrap; 
+}
+.nav-links a, .header-nav a {
+    padding: 12px 18px;
+    font-size: larger;
+    border-bottom: 3px solid var(--oat);
+    font-family: var(--syne);
+    color: var(--navbuttoncolor);
+    text-decoration: none;
+}
+.site-logo:hover,
+.nav-links a:hover,
+.nav-links a.active,
+.header-nav a:hover {
+  font-style: italic;
+}
+.header-nav a.active {
+    border-bottom-color: var(--olive-green);
+    font-style: bold; 
+}
+
+/*Text rules*/ 
+h1 {
+    font-family: var(--syne);
+    color: var(--oat);
+    background-color: var(--tomato-primary);
+    font-size: 48px;
+    font-weight: 400;
+    position: relative;
+    text-align: left;
+    margin-top: 65px;
+    padding: 0 4%; 
+}
+h2 {
+    font-family: var(--syne);
+    background-color: var(--tomato-primary);
+    color: var(--oat);
+    font-size: 48px;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+    padding: 0 4%;
+}
+p {
+    font-family: var(--urbanist); 
+    color: var(--white);
+    background-color: var(--rhubarb);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top : -2rem; 
+    margin-bottom: 20px;
+    padding: 0 4%;
+    text-align: justify;
+}
+.image-right{
+    float: right;
+    width: 200px;
+    margin: 0 4% 16px 24px; 
+    padding: 0 4% ;
+}
+.image-left {
+  float: left;
+  width: 200px;
+  margin: 0 24px 16px 0;
+}
+
+
+/* Menu de navigation*/ 
+.menu-grid {
+    display: grid; 
+    grid-template-columns: 1fr;
+    gap: 24px; 
+    margin: 3rem auto; 
+    max-width: 1100px;
+}
+.menu-card{
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    background-color:var(--oat);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.menu-card img{
+    width: 35%;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.menu-card:hover img {
+  transform: scale(1.03);
+}
+
+.menu-card-content {
+  flex: 1;
+  padding: 0 24px 24px;
+  text-align: left;
+}
+.menu-card-title {
+  font-family: var(--syne);
+  position : 10px;
+  font-size: 5em;
+  color: var(--oat);
+  background-color:;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  padding: 0;
+  text-align: center;
+  border-bottom: 3px solid var(--olive-green);
+}
+.menu-card-description {
+  font-family: var(--urbanist);
+  font-size: larger;
+  line-height: 1.5;
+  color: var(--olive-green);
+}
+.menu-card-right {
+  flex-direction: row-reverse;
+}
+.menu-card-right .menu-card-content,
+.menu-card-right .menu-card-title,
+.menu-card-right .menu-card-description {
+  text-align: right;
+}
+.paragraphs {
+  display: flow-root;
+  width: 92%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.paragraphs p {
+  font-family: var(--urbanist);
+  font-size: larger;
+  color: var(--dark);
+  background-color: var(--oat);
+  padding: 0;
+  text-align: left;
+}
+.menu-section { padding: 0 4%; }
+.menu-section > h1 { padding: 0; text-align: center; }
+.menu-card-description { margin: 0; padding: 0; }
+.menu-card:focus-visible { outline: 3px solid var(--espresso); outline-offset: 4px; }
+
+@media (max-width: 767px) {
+  .site-header { flex-wrap: wrap; gap: 12px; padding-block: 12px; }
+  .nav-links a { padding: 10px; }
+  .menu-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .menu-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-card img {
+    width: 100%;
+  }
+}
+
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sand);
+  color: var(--espresso);
+  font-size: 30px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social-button:hover,
+.social-button:focus-visible {
+  background: var(--tomato-primary);
+  color: var(--white);
+}
+
+br{
+    margin-top: 5rem; 
+    margin-bottom: 5rem; 
+}
+
+.compact-header {
+  position: static;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 4%;
+  background: var(--warm-white);
+  border-bottom: 2px solid var(--sand);
+}
+
+.compact-logo {
+  font: 1.4rem "DM Serif Display", serif;
+  color: var(--tomato-primary);
+  text-decoration: none;
+}
+
+.compact-header .header-nav {
+  width: auto;
+  padding: 0;
+  gap: 8px;
+  border: 0;
+}
+
+.recipe-header {
+  position: static;
+}
+.recipe-content {
+    display: flow-root;
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding: 0 24px; 
+}
+
+.recipe-content .recipe-image-right {
+  float: right;
+  width: 250px;
+  max-width: 45%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  margin: 0 0 24px 24px;
+}
+
+.recipe-clear {
+  clear: both;
+}
+.recipe-content h1{
+    font-family: "DM Serif Display", serif; 
+    font-size: 42px;
+    text-align: center;
+    margin: 32px 0;
+    padding: 0;
+}
+.recipe-content h2{
+   font-family: "DM Serif Display", serif; 
+    font-size: 42px;
+    text-align: center;
+    margin: 32px 0;
+    padding: 0;
+}
+
+.recipe-content p{
+    font-family: "Outfit", serif; 
+    margin: 0 0 20px; 
+    padding: 0;
+}
+/* All recipe headings */
+.recipe-content h1{
+  font-family: "DM Serif Display", serif;
+}
+
+.recipe-content h2,
+.recipe-content h3 {
+  font-family: "La Belle Aurore", cursive; 
+  text-align: left;
+
+}
+
+/* Paragraphs, ingredients, and instructions */
+.recipe-content p, 
+.recipe-content li {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+
+}
+.recipe-content-intro {
+    font-family: "Outfit", sans-serif; 
+    font-size: 18px; 
+    font-style: italic; 
+    text-align: center;
+}
+@media (max-width: 600px) {
+  .recipe-content .recipe-image-right {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 24px;
+  }
+}
+
+
+.recipe-presentation-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.recipe-presentation {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.recipe-presentation img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.recipe-presentation-content {
+  padding: 20px;
+}
+
+.recipe-presentation-date {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--taupe);
+  margin: 8px 0 12px;
+  padding: 0;
+  text-align: left;
+}
+
+.recipe-presentation-description {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+/* Recipe listing card structure */
+.recipe-presentation-grid {
+  display: grid;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+}
+.recipe-presentation {
+  display: flex;
+  overflow: hidden;
+  min-width: 0;
+  text-decoration: none;
+  background: var(--sand);
+  color: var(--espresso);
+  border: 1px solid var(--sand);
+}
+.recipe-presentation img { display: block; }
+.recipe-presentation-title {
+  font-family: "La Belle Aurore", cursive;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  padding: 0;
+  text-align: left;
+  color: var(--espresso);
+}
+.recipe-presentation-description {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.recipe-presentation:focus-visible { outline: 3px solid var(--espresso); outline-offset: 4px; }
+
+.recipe-presentation-grid { align-items: start; }
+.recipe-presentation-placeholder {
+  height: 220px;
+  background: var(--sand);
+  border-bottom: 1px solid var(--taupe);
+}
+
+.ideas-section {
+  padding: 0 24px;
+}
+
+.ideas-section .explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.explore-card img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .ideas-section .explore-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .ideas-section .explore-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Idea cards */
+.explore-card { overflow: hidden; background: var(--sand); border: 1px solid var(--sand); }
+.explore-card-content { padding: 20px; }
+.explore-card-title { margin: 0 0 12px; padding: 0; font-size: 2rem; font-family: "DM Serif Display", serif;}
+.explore-card-description { margin: 0; padding: 0; text-align: left; }
+
+/* Idea category buttons */
+.idea-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; font-family: "La Belle Aurore", cursive;}
+.idea-filters button {
+  padding: 10px 20px;
+  font: 20px "La Belle Aurore", cursive; 
+  border: 1px solid var(--tomato-primary);
+  border-radius: 24px;
+  background: transparent;
+  color: var(--tomato-primary);
+  cursor: pointer;
+}
+.idea-filters button[aria-pressed="true"] { background: var(--tomato-primary); color: var(--white); }
+.idea-filters button:focus-visible { outline: 2px solid var(--espresso); outline-offset: 3px; }
+.explore-card[hidden] { display: none; }
+
+.recipe-presentation[hidden] { display: none; }
+
+/* Empty footer */
+.site-footer {
+  min-height: 100px;
+  margin-top: 48px;
+  background: var(--sand);
+}
+
+.compact-logo .fa-carrot { margin-left: 8px; }
+
+/* About me */
+.about-content {
+  display: flow-root;
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about-photo {
+  float: right;
+  width: 250px;
+  max-width: 45%;
+  height: auto;
+  margin: 0 0 24px 24px;
+}
+.about-content p { margin: 0 0 20px; padding: 0; }
+@media (max-width: 600px) {
+  .about-photo {
+    float: none;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+}
+
+/* Match homepage navigation to the logo lettering */
+.home-header-content {
+  width: max-content;
+  max-width: 100%;
+}
+.home-header-content .header-logo {
+  position: relative;
+  overflow: visible;
+}
+.home-header-content .header-logo .fa-carrot {
+  position: absolute;
+  left: calc(100% + 12px);
+  font-size: 0.6em;
+}
+.home-header-content .header-nav {
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline: 0;
+}
+.home-header-content .header-nav a { padding-inline: 0; }
+@media (max-width: 600px) {
+  .home-header-content .header-nav { gap: 8px; }
+  .home-header-content .header-nav a { font-size: 0.85rem; }
+}
+
+/* Keep the recipe listing title directly below the banner. */
+.recipes-title { margin-top: 0; }
+
+/* Match the homepage banner styling while retaining the compact layout. */
+.recipes-banner {
+  background-color: var(--tomato-primary);
+  color: var(--oat);
+}
+.recipes-banner .compact-logo {
+  font-family: var(--syne);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--oat);
+}
+.recipes-banner .compact-logo .fa-leaf { margin-left: 12px; }
+.recipes-banner .header-nav a { color: var(--oat); }
+
+/* Match the homepage navigation button dimensions. */
+.recipes-banner .header-nav { gap: 12px; }
+.recipes-banner .header-nav a { padding-inline: 0; }
+@media (max-width: 600px) {
+  .recipes-banner .header-nav { gap: 8px; }
+  .recipes-banner .header-nav a { font-size: 0.85rem; }
+}
+
+/* Keep the home and recipe pages at the same scale on narrow screens. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.consistent-page { font-size: 16px; }
+.consistent-page *,
+.consistent-page *::before,
+.consistent-page *::after { box-sizing: border-box; }
+.consistent-page main { width: 100%; min-width: 0; }
+.consistent-page .menu-card-content,
+.consistent-page .recipe-presentation-content { min-width: 0; }
+.consistent-page h1,
+.consistent-page h2,
+.consistent-page p { overflow-wrap: anywhere; }
+.consistent-page .header-logo,
+.consistent-page .compact-logo { max-width: 100%; overflow-wrap: anywhere; }
+.consistent-page .header-nav { max-width: 100%; }
+.consistent-page img { max-width: 100%; }
+
+/* Align the recipe listing with the homepage content margins. */
+.recipes-page .recipes-title,
+.recipes-page .recipe-filters,
+.recipes-page .recipe-presentation-grid {
+  width: 92%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.recipes-page .recipe-presentation-grid { padding-inline: 0; }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>Gulerodslaks | Ideas</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+    <body>
+<header class="site-header"> 
+  <div class="home-header-content">
+    <a class="header-logo" href="index.html"><span>Gulerodslaks</span><i class="fas fa-leaf" aria-hidden="true"></i></a>
+    <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a class="active" href="ideas.html" aria-current="page">Inspiration</a>
+        <a href="about.html">About me</a>
+    </nav>
+  </div>
+</header>
+<main class="ideas-section">
+  <h1>Inspiration</h1>
+<div class="idea-filters" aria-label="Filter ideas">
+  <button type="button" data-filter="" aria-pressed="true">
+    All
+  </button>
+  
+  <button type="button" data-filter="dishes" aria-pressed="false">
+    Dishes
+  </button>
+  
+  <button type="button" data-filter="desserts" aria-pressed="false">
+    Desserts
+  </button>
+  
+</div>
+<div class="explore-grid">
+    
+      <article class="explore-card" data-category="dishes">
+        <img src="/img/arancini.png"
+             alt="Arancinis"
+             loading="lazy">
+
+        <div class="explore-card-content">
+          <h2 class="explore-card-title">Arancinis</h2>
+          <p class="explore-card-description">
+            Arancini made with confit garlic and tomato risotto, topped with chili mayo and fried sage
+          </p>
+        </div>
+      </article>
+    
+      <article class="explore-card" data-category="dishes">
+        <img src="/img/tourtiere.png"
+             alt="Tourtière"
+             loading="lazy">
+
+        <div class="explore-card-content">
+          <h2 class="explore-card-title">Tourtière</h2>
+          <p class="explore-card-description">
+            A vegetarian take on a Quebecois Tourtière with ketchup aux fruits
+          </p>
+        </div>
+      </article>
+    
+      <article class="explore-card" data-category="desserts">
+        <img src="/img/mousse.png"
+             alt="Mousse"
+             loading="lazy">
+
+        <div class="explore-card-content">
+          <h2 class="explore-card-title">Mousse</h2>
+          <p class="explore-card-description">
+            My forever favourite chocolate mousse
+          </p>
+        </div>
+      </article>
+    
+      <article class="explore-card" data-category="dishes">
+        <img src="/img/bofsandwich.png"
+             alt="Bøfsandwich"
+             loading="lazy">
+
+        <div class="explore-card-content">
+          <h2 class="explore-card-title">Bøfsandwich</h2>
+          <p class="explore-card-description">
+            A vegetarian Danish Bøfsandwich
+          </p>
+        </div>
+      </article>
+    
+  </div>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll(".idea-filters button");
+  const cards = document.querySelectorAll(".explore-card");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.dataset.filter;
+      buttons.forEach(item => {
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+      cards.forEach(card => {
+        card.hidden = category !== "" && card.dataset.category !== category;
+      });
+    });
+  });
+</script>
+<footer class="site-footer"></footer>
+</body>
+</html>

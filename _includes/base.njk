@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title or "Gulerodslaks" }}</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+<header class="site-header">
+  <a class="header-logo" href="/">Gulerodslaks <i class="fas fa-carrot" aria-hidden="true"></i></a>
+
+  <nav class="header-nav" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a class="active" href="/recipes.html">Recipes</a>
+    <a href="/ideas.html">Inspiration</a>
+    <a href="/about.html">About me</a>
+  </nav>
+</header>
+    {{ content | safe }}
+
+<footer class="site-footer"></footer>
+</body>
+</html>
