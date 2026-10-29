@@ -26,7 +26,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: npm ci
       - name: Clear previously generated files
-        run: node -e "require('node:fs').rmSync('_site', { recursive: true, force: true })"
+        run: >-
+          node -e "require('node:fs').rmSync('_site', { recursive: true, force: true })"
       - name: Build the website with Eleventy
         run: npm run build
       - name: Check the generated homepage and recipe listing
