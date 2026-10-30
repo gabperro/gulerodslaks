@@ -7,7 +7,7 @@
   /* Palette */
   --warm-white: #f7e2e2;
   --oat: #f7e2e2;
-  --tomato-primary: #2f855a;
+  --tomato-primary: #B22222;
   --sage-green: #879f77A;
   --olive-green: #303B2E;
   --pale-olive: #D5D5B7; 
@@ -74,7 +74,7 @@ body {
     margin-left: 8px;
     color: orangered;
 }
-.site-logo:hover, .site-logo .fa-leaf:hover {
+.site-logo:hover, .site-logo .fa-seedling:hover {
     font-style: italic;
 }
 
@@ -588,7 +588,7 @@ br{
   line-height: 1;
   color: var(--oat);
 }
-.recipes-banner .compact-logo .fa-leaf { margin-left: 12px; }
+.recipes-banner .compact-logo .fa-seedling{ margin-left: 12px; }
 .recipes-banner .header-nav a { color: var(--oat); }
 
 /* Match the homepage navigation button dimensions. */

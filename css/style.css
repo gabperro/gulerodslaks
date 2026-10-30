@@ -74,7 +74,7 @@ body {
     margin-left: 8px;
     color: orangered;
 }
-.site-logo:hover, .site-logo .fa-leaf:hover {
+.site-logo:hover, .site-logo .fa-seedling:hover {
     font-style: italic;
 }
 
@@ -588,7 +588,7 @@ br{
   line-height: 1;
   color: var(--oat);
 }
-.recipes-banner .compact-logo .fa-leaf { margin-left: 12px; }
+.recipes-banner .compact-logo .fa-seedling{ margin-left: 12px; }
 .recipes-banner .header-nav a { color: var(--oat); }
 
 /* Match the homepage navigation button dimensions. */
