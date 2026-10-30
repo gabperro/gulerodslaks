@@ -24,7 +24,7 @@ body {
 /*Header*/
 .site-header {
     position: sticky; 
-    top: -180px;
+    top: 0;
     z-index: 1000; 
     display: flex;
     flex-direction: column;
@@ -351,7 +351,7 @@ br{
 
 .recipe-content h2,
 .recipe-content h3 {
-  font-family: "La Belle Aurore", cursive; 
+  font-family: var(--syne); 
   text-align: left;
 
 }
@@ -494,7 +494,7 @@ br{
 .explore-card-description { margin: 0; padding: 0; text-align: left; }
 
 /* Idea category buttons */
-.idea-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; font-family: "La Belle Aurore", cursive;}
+.idea-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; font-family: var(--ibmplexmono);}
 .idea-filters button {
   padding: 10px 20px;
   font: 20px "La Belle Aurore", cursive; 
