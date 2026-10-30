@@ -207,7 +207,9 @@ p {
 .menu-card-right .menu-card-title,
 .menu-card-right .menu-card-description {
   text-align: center;
+  align-items: center;
 }
+
 .paragraphs {
   display: flow-root;
   width: 92%;
