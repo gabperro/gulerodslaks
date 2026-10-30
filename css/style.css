@@ -438,8 +438,8 @@ br{
   font-family: var(--syne);
   font-size: 2rem;
   line-height: 1.2;
-  margin: 0 0 12px;
-  padding: 0;
+  margin: -20px -20px 12px;
+  padding: 0 20px;
   text-align: left;
   color: var(--espresso);
 }
