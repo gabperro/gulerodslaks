@@ -629,5 +629,5 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .recipes-page .recipe-presentation-grid { padding-inline: 0; }
 
 .explore-card:hover img {
-  transform: scale(5.03rem);
+  transform: scale(5.03px);
 }
