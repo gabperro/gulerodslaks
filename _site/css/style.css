@@ -5,10 +5,10 @@
 /*Root work */
 :root {
   /* Palette */
-  --warm-white: #FAF8F2;
-  --oat: #EDE8DC;
-  --tomato-primary: #75a155
-  --sage-green: #87977A;
+  --warm-white: #f7e2e2;
+  --oat: #f7e2e2;
+  --tomato-primary: #2f855a;
+  --sage-green: #879f77A;
   --olive-green: #303B2E;
   --pale-olive: #D5D5B7; 
   --syne: "Syne", sans-serif; 
@@ -185,7 +185,7 @@ p {
 .menu-card-title {
   font-family: var(--syne);
   position : 10px;
-  font-size: 5em;
+  font-size: 4em;
   color: var(--oat);
   background-color:;
   margin-bottom: 0.5rem;
