@@ -206,7 +206,7 @@ p {
 .menu-card-right .menu-card-content,
 .menu-card-right .menu-card-title,
 .menu-card-right .menu-card-description {
-  text-align: right;
+  text-align: center;
 }
 .paragraphs {
   display: flow-root;
@@ -414,6 +414,7 @@ br{
   margin: 0;
   padding: 0;
   text-align: left;
+  border: 2px solid var(--oat);
 }
 /* Recipe listing card structure */
 .recipe-presentation-grid {
@@ -612,6 +613,7 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .consistent-page img { max-width: 100%; }
 
 /* Align the recipe listing with the homepage content margins. */
+.ideas-title,
 .recipes-page .recipes-title,
 .recipes-page .recipe-filters,
 .recipes-page .recipe-presentation-grid {

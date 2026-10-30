@@ -206,7 +206,7 @@ p {
 .menu-card-right .menu-card-content,
 .menu-card-right .menu-card-title,
 .menu-card-right .menu-card-description {
-  text-align: right;
+  text-align: center;
 }
 .paragraphs {
   display: flow-root;
