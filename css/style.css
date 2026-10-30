@@ -209,7 +209,9 @@ p {
   text-align: center;
   align-items: center;
 }
-
+.menu-card-right {
+  text-align: center;
+}
 .paragraphs {
   display: flow-root;
   width: 92%;
