@@ -435,7 +435,7 @@ br{
 }
 .recipe-presentation img { display: block; }
 .recipe-presentation-title {
-  font-family: "La Belle Aurore", cursive;
+  font-family: var(--syne);
   font-size: 2rem;
   line-height: 1.2;
   margin: 0 0 12px;
